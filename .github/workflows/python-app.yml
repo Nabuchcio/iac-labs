@@ -65,7 +65,7 @@ jobs:
       run: poetry run task lint
 
   formatter:
-    needs: lint
+    needs: build
     runs-on: ubuntu-latest
     
     defaults:
@@ -90,7 +90,7 @@ jobs:
       run: poetry run task formatter
 
   security:
-    needs: formatter
+    needs: build
     runs-on: ubuntu-latest
     
     defaults:
